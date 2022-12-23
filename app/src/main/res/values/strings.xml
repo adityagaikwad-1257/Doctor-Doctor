@@ -1,0 +1,25 @@
+<resources>
+<!--    Shared preference name-->
+    <string name="USER_DATA_KEY">USER DATA</string>
+
+    <string name="app_name">Doctor Doctor</string>
+    <string name="basic_details">Basic Details</string>
+    <string name="feel_free_to_fill_your_details">Feel free to fill your details</string>
+    <string name="full_name">Full Name</string>
+    <string name="name_hint">Name</string>
+    <string name="email_id_hint">Email ID</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="others">Others</string>
+    <string name="practicing_from">Practicing From</string>
+    <string name="continue_btn">continue_btn</string>
+    <string name="months">Months</string>
+    <string name="year">Year</string>
+    <string name="hello">Hello,</string>
+    <string name="notification_bell">notification_bell</string>
+    <string name="search">Search.</string>
+    <string name="static_image">static image</string>
+    <string name="at_your_fingertip">At your Fingertip</string>
+    <string name="click_here_to_log_out"><![CDATA[--> Click here to log out <--]]></string>
+</resources>
