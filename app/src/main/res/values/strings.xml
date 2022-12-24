@@ -1,5 +1,5 @@
 <resources>
-<!--    Shared preference name-->
+    <!--    Shared preference name-->
     <string name="USER_DATA_KEY">USER DATA</string>
 
     <string name="app_name">Doctor Doctor</string>
@@ -19,7 +19,8 @@
     <string name="hello">Hello,</string>
     <string name="notification_bell">notification_bell</string>
     <string name="search">Search.</string>
-    <string name="static_image">static image</string>
+    <string name="static_image">view pager card</string>
     <string name="at_your_fingertip">At your Fingertip</string>
     <string name="click_here_to_log_out"><![CDATA[--> Click here to log out <--]]></string>
+    <string name="doctor_id">Doctor ID:</string>
 </resources>

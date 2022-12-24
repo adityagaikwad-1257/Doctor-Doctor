@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.view.View;
 import com.adi.doctordoctor.R;
 import com.adi.doctordoctor.Utils.FingerTipAdapter;
 import com.adi.doctordoctor.Utils.Util;
+import com.adi.doctordoctor.Utils.ViewPagerAdapter;
 import com.adi.doctordoctor.databinding.ActivityHomeBinding;
 import com.adi.doctordoctor.models.Doctor;
 
@@ -36,11 +38,15 @@ public class HomeActivity extends AppCompatActivity {
         binding.ftRecyclerView.setAdapter(adapter);
 
         /*
-            log out listener
+            static view pager initialisations and its adapter
          */
-        binding.logOutBtn.setOnClickListener(this::logOut);
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter();
+        binding.viewPagerHome.setAdapter(viewPagerAdapter);
+        binding.dotsIndicator.attachTo(binding.viewPagerHome);
 
         setUpUserDetails();
+
+        binding.profileImg.setOnClickListener(v -> startActivity(new Intent(this, DoctorListActivity.class)));
     }
 
     /*

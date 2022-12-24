@@ -1,10 +1,12 @@
 package com.adi.doctordoctor.retrofit;
 
 import com.adi.doctordoctor.models.Doctor;
+import com.adi.doctordoctor.models.GetResponse;
 import com.adi.doctordoctor.models.PostResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
@@ -15,4 +17,8 @@ public interface DoctorsApi {
                 "X-Requested-With: X"})
     @POST("ZCDS_TEST_REGISTER_CDS/ZCDS_TEST_REGISTER")
     Call<PostResponse> registerDoctor(@Body Doctor doctor);
+
+    @Headers({"Accept: application/json"})
+    @GET("ZCDS_TEST_REGISTER_CDS/ZCDS_TEST_REGISTER")
+    Call<GetResponse> getAllDoctors();
 }

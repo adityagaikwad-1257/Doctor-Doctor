@@ -28,7 +28,7 @@ public class RetrofitHelper {
 
     private static final String BASE_URL = "http://199.192.26.248:8000/sap/opu/odata/sap/";
 
-    private static DoctorsApi getDoctorApi(){
+    public static DoctorsApi getDoctorApi(){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())

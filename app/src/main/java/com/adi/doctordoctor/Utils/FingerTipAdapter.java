@@ -1,7 +1,6 @@
 package com.adi.doctordoctor.Utils;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -13,6 +12,8 @@ import com.adi.doctordoctor.databinding.FingertipItemBinding;
 
 public class FingerTipAdapter extends RecyclerView.Adapter<FingerTipAdapter.FingerTipViewHolder> {
     private final Context context;
+
+    private int selectedPosition = -1;
 
     private final int[] icons = {
             R.drawable.check_up,
@@ -31,6 +32,10 @@ public class FingerTipAdapter extends RecyclerView.Adapter<FingerTipAdapter.Fing
             "Nurse",
             "medicine"
     };
+
+    private void setSelectedPosition(int position){
+        this.selectedPosition = position;
+    }
 
     public FingerTipAdapter(Context context){
         this.context = context;
@@ -55,6 +60,30 @@ public class FingerTipAdapter extends RecyclerView.Adapter<FingerTipAdapter.Fing
 
         holder.binding.itemImg.setImageResource(icon);
         holder.binding.itemName.setText(name);
+
+
+        /*
+            check and uncheck of the options
+         */
+
+        /*
+            setting default bg
+         */
+        holder.binding.fingerTip.setBackgroundColor(context.getResources().getColor(android.R.color.white));
+        holder.binding.itemName.setTextColor(context.getResources().getColor(android.R.color.black));
+
+        holder.binding.fingerTipCard.setOnClickListener(v -> {
+            if (selectedPosition != position){
+                /*
+                    unselecting the already selected item
+                 */
+                notifyItemChanged(selectedPosition);
+                selectedPosition = position;
+
+                holder.binding.fingerTip.setBackgroundColor(context.getResources().getColor(android.R.color.holo_orange_dark));
+                holder.binding.itemName.setTextColor(context.getResources().getColor(android.R.color.white));
+            }
+        });
     }
 
     @Override

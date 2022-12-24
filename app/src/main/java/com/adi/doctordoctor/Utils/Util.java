@@ -8,8 +8,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 
 import com.adi.doctordoctor.R;
-import com.adi.doctordoctor.activities.HomeActivity;
 import com.adi.doctordoctor.models.Doctor;
+
+import java.util.ArrayList;
 
 public class Util {
     /*
@@ -21,6 +22,23 @@ public class Util {
     public static final String DOCTOR_PR_FR_YEAR_KEY = "YEAR";
     public static final String DOCTOR_GENDER_KEY = "GENDER";
     public static final String DOCTOR_GUID_KEY = "DOC_GUID";
+
+    private static final ArrayList<String> STATIC_IMAGES;
+
+    static {
+        STATIC_IMAGES = new ArrayList<>();
+        STATIC_IMAGES.add("https://thumbs.dreamstime.com/z/sneakers-solid-classic-blue-backdrop-inspirational-motivational-quote-never-give-up-keep-fit-athletic-sneakers-168073270.jpg");
+        STATIC_IMAGES.add("https://thumbs.dreamstime.com/b/stationery-stay-home-made-plasticine-yellow-background-178345903.jpg");
+        STATIC_IMAGES.add("https://thumbs.dreamstime.com/b/your-health-investment-not-expense-your-health-investment-not-expense-concept-health-sport-diet-fitness-144301911.jpg");
+    }
+
+    public static String getImageAt(int position){
+        return STATIC_IMAGES.get(position);
+    }
+
+    public static int getStaticDataSize(){
+        return STATIC_IMAGES.size();
+    }
 
     /*
         util functions for RegisterActivity

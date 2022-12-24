@@ -2,6 +2,8 @@ package com.adi.doctordoctor.models;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
+
 public class Doctor {
     private String name;
     private String email;
@@ -9,6 +11,8 @@ public class Doctor {
     private String practice_frm_month;
     private String practice_frm_year;
     private String doctors_id;
+
+//    private String age;
 
     public Doctor(){}
 
@@ -32,6 +36,27 @@ public class Doctor {
                 ", doctors_id='" + doctors_id + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Doctor)) return false;
+        Doctor doctor = (Doctor) o;
+        return Objects.equals(name, doctor.name) && Objects.equals(email, doctor.email) && Objects.equals(gender, doctor.gender) && Objects.equals(practice_frm_month, doctor.practice_frm_month) && Objects.equals(practice_frm_year, doctor.practice_frm_year) && Objects.equals(doctors_id, doctor.doctors_id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, email, gender, practice_frm_month, practice_frm_year, doctors_id);
+    }
+
+    //    public String getAge() {
+//        return age;
+//    }
+//
+//    public void setAge(String age) {
+//        this.age = age;
+//    }
 
     public String getDoctors_id() {
         return doctors_id;
